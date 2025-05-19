@@ -1,17 +1,11 @@
 # GitHub Pages configuration for Solution Studio Docs
 
 # Set the theme (optional, can be changed)
-theme: jekyll-theme-cayman
+theme: jekyll-theme-minimal
 
 # Set the source directory for docs (if using /docs)
 # Uncomment the following line if your docs are in the /docs folder
-# source: docs
-
-# Exclude files/folders from the site
-exclude:
-  - README.MD
-  - _config.yaml
-  - _layout.html
+source: docs
 
 # Enable future-dated posts (optional)
 future: true

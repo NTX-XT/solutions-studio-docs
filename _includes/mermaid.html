@@ -1,7 +1,18 @@
-<script type="module">
-    Array.from(document.querySelectorAll('code.language-mermaid, pre code.language-mermaid')).forEach(element => {
-        element.classList.add("mermaid");
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Find all code blocks with mermaid class or language-mermaid class
+        Array.from(document.querySelectorAll('code.language-mermaid, pre code.language-mermaid')).forEach(element => {
+            element.classList.add("mermaid");
+            // Remove the language-mermaid class to avoid duplicate rendering
+            element.classList.remove("language-mermaid");
+        });
+        
+        // Initialize mermaid
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose' // Needed for some diagrams that use click events
+        });
     });
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
 </script>
